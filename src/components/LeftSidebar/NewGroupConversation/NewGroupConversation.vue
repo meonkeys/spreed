@@ -355,6 +355,14 @@ $dialog-height: 480px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: transparent;
+	border: 1px solid var(--color-primary);
+	color: var(--color-primary) !important;
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--color-primary-light);
+	}
 }
 
 .new-group-conversation {
