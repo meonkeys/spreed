@@ -354,6 +354,10 @@ class SystemMessage {
 			if ($currentUserIsActor) {
 				$parsedMessage = $this->l->t('You stopped Matterbridge.');
 			}
+		} elseif ($message === 'object_shared') {
+			$parsedParameters['object'] = $parameters['metaData'];
+			$parsedMessage = '{object}';
+			$chatMessage->setMessageType('comment');
 		} else {
 			throw new \OutOfBoundsException('Unknown subject');
 		}
