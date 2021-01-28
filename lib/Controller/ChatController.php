@@ -175,7 +175,6 @@ class ChatController extends AEnvironmentAwareController {
 	}
 
 	public function parseCommentToResponse(IComment $comment, Message $parentMessage = null): DataResponse {
-
 		$chatMessage = $this->messageParser->createMessage($this->room, $this->participant, $comment, $this->l);
 		$this->messageParser->parseMessage($chatMessage);
 
@@ -316,7 +315,6 @@ class ChatController extends AEnvironmentAwareController {
 		}
 
 		return $this->parseCommentToResponse($comment);
-
 	}
 
 	/**
