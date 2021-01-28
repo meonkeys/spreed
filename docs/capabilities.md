@@ -64,3 +64,6 @@ title: Capabilities
 * `room-description` - A description can be get and set for conversations.
 * `config => chat => read-privacy` - See `chat-read-status`
 * `config => previews => max-gif-size` - Maximum size in bytes below which a GIF can be embedded directly in the page at render time. Bigger files will be rendered statically using the preview endpoint instead. Can be set with `occ config:app:set spreed max-gif-size --value=X` where X is the new value in bytes. Defaults to 3 MB.
+
+## 12.0
+* `rich-object-sharing` - Rich objects can be shared to chats. See [OCP\RichObjectStrings\Definitions](https://github.com/nextcloud/server/blob/master/lib/public/RichObjectStrings/Definitions.php) for more details on supported rich objects and required data.
