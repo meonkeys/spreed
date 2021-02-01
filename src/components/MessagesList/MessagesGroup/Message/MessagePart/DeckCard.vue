@@ -20,13 +20,22 @@
 -->
 
 <template>
-	<a
-		v-tooltip.bottom="deckLocation"
-		class="external"
+	<div
+		tabindex="0"
+		class="deck-card"
 		:href="link"
-		target="_blank">
-		<strong>{{ name }}</strong>
-	</a>
+		target="_blank"
+		@click="handleClick">
+		<div class="deck-card__title">
+			{{ name }}
+		</div>
+		<div class="deck-card__subtitle">
+			<div>
+				{{ deckLocation }}
+			</div>
+			<div class="icon-reply" />
+		</div>
+	</div>
 </template>
 
 <script>
@@ -74,5 +83,41 @@ export default {
 			})
 		},
 	},
+
+	methods: {
+		handleClick() {
+			console.debug('click')
+		},
+	},
 }
 </script>
+
+<style lang="scss" scoped>
+.deck-card {
+	display: flex;
+	transition: box-shadow 0.1s ease-in-out;
+	box-shadow: 0 0 2px 0 var(--color-box-shadow);
+	border-radius: var(--border-radius-large);
+	font-size: 100%;
+	background-color: var(--color-main-background);
+	margin-bottom: 16px;
+	min-height: 44px;
+	max-width: 300px;
+	padding: 4px 8px;
+	flex-direction: column;
+	white-space: nowrap;
+	cursor: pointer;
+	&:hover,
+	&:focus{
+		box-shadow: 0 0 5px 0 var(--color-box-shadow);
+	}
+	&__title {
+		height: 30px;
+	}
+	&__subtitle {
+		height: 30px;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+</style>
